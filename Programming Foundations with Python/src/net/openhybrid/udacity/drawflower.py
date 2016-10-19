@@ -5,6 +5,7 @@ Created on Aug 12, 2016
 '''
 import turtle
 
+
 def draw_square(some_turtle):
     for i in range(1,5):
         some_turtle.forward(100)

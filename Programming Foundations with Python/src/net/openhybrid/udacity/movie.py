@@ -5,6 +5,7 @@ Created on Aug 12, 2016
 '''
 import turtle
 
+
 def draw_square():
     window = turtle.Screen()
     window.bgcolor("red")

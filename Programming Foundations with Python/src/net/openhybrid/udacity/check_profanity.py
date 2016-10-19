@@ -6,6 +6,7 @@ Created on Sep 5, 2016
 import sys
 import urllib.request
 
+
 print(sys.version)
 
 def read_text():

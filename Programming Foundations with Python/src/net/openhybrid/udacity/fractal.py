@@ -5,6 +5,8 @@ Created on Aug 14, 2016
 '''
 
 import turtle
+
+
 #Haha TTpro
 def draw_triangle(the_turtle,length,ori,recursion):
     recursion=recursion+1

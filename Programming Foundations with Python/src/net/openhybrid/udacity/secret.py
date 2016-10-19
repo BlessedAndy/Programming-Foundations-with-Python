@@ -4,6 +4,8 @@ Created on Aug 11, 2016
 @author: Andy Zhang
 '''
 import os
+
+
 def rename_files():
     #1. get file names from a folder
     file_list = os.listdir(r"C:\Users\I310003\Documents\SAP\Learn\Python\Udacity\scripts\prank\prank")

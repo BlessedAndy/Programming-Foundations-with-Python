@@ -3,6 +3,7 @@ Created on Sep 29, 2016
 
 @author: Andy Zhang
 '''
+import webbrowser
 
 class Movie():
     def __init__(self,movie_title,movie_storyline,poster_image,trailer):
@@ -10,3 +11,7 @@ class Movie():
         self.storyline = movie_storyline
         self.poster_image_url = poster_image
         self.trailer_url = trailer
+        
+    def show_trailer(self):
+        webbrowser.open(self.trailer_url)
+        webbrowser.open("http://music.163.com/#/outchain/2/409872465/")
