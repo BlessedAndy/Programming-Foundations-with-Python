@@ -6,6 +6,11 @@ Created on Sep 29, 2016
 import webbrowser
 
 class Movie():
+    
+    """THIS IS FOR TESTING PYTHON DOC"""
+    
+    valid_ratings = ["G","PG","PG-13","R"]
+    
     def __init__(self,movie_title,movie_storyline,poster_image,trailer):
         self.title = movie_title
         self.storyline = movie_storyline
