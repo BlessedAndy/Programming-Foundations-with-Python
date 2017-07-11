@@ -4,18 +4,21 @@ Created on 7 Jul 2017
 @author: andy
 '''
 import pyautogui
+from subprocess import Popen
+from time import sleep
+
 print(pyautogui.size())
 
-pyautogui.PAUSE = 2.5
-pyautogui.FAILSAFE = True
+#pyautogui.PAUSE = 2.5
+#pyautogui.FAILSAFE = True
 
+SAPGUI = Popen(['command','iTunes'],shell=True)
 pyautogui.hotkey('win', 'up')  # Win + up
 
 
-#pyautogui.press('enter')  # press the Enter key
-#pyautogui.press('f1')     # press the F1 key
-#pyautogui.press('left')   # press the left arrow key
-
+# pyautogui.press('enter')  # press the Enter key
+# pyautogui.press('f1')     # press the F1 key
+# pyautogui.press('left')   # press the left arrow key
 
 #pyautogui.moveTo(x, y, duration=num_seconds)
 
