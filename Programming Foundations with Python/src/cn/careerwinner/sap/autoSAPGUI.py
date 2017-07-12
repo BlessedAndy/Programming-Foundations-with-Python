@@ -9,10 +9,11 @@ from time import sleep
 
 print(pyautogui.size())
 
-#pyautogui.PAUSE = 2.5
-#pyautogui.FAILSAFE = True
+pyautogui.PAUSE = 2.5
+pyautogui.FAILSAFE = True
 
-SAPGUI = Popen(['command','iTunes'],shell=True)
+SAPGUI = Popen(['start','SAPLogon'],shell=True)
+sleep(7)
 pyautogui.hotkey('win', 'up')  # Win + up
 
 
@@ -64,7 +65,7 @@ pyautogui.hotkey('win', 'up')  # Win + up
 
 
 #pyautogui.getWindows() # returns a dict of window titles mapped to window IDs
-#pyautogui.getWindow(str_title_or_int_id) # returns a “Win” object
+#pyautogui.getWindow(str_title_or_int_id) # returns a â€œWinâ€� object
 #win.move(x, y)
 #win.resize(width, height)
 #win.maximize()
@@ -73,5 +74,5 @@ pyautogui.hotkey('win', 'up')  # Win + up
 #win.close()
 #win.position() # returns (x, y) of top-left corner
 #win.moveRel(x=0, y=0) # moves relative to the x, y of top-left corner of the window
-#win.clickRel(x=0, y=0, clicks=1, interval=0.0, button=’left’) # click relative to the x, y of top-left corner of the window
+#win.clickRel(x=0, y=0, clicks=1, interval=0.0, button=â€™leftâ€™) # click relative to the x, y of top-left corner of the window
 #Additions to screenshot functionality so that it can capture specific windows instead of full screen.
