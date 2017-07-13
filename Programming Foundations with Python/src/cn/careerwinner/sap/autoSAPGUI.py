@@ -14,7 +14,28 @@ pyautogui.FAILSAFE = True
 
 SAPGUI = Popen(['start','SAPLogon'],shell=True)
 sleep(7)
+
+#STEP 1: Open SAP GUI
 pyautogui.hotkey('win', 'up')  # Win + up
+
+#STEP 2: Double click ERP icon
+x, y = pyautogui.locateCenterOnScreen('DoubleClickERP.png')
+pyautogui.doubleClick(x, y)
+
+#Logon system, input username and password
+#Client: 210/220
+#U: PTNPUNNEEAM
+#P: QWERTY
+
+#Find input box
+x, y = pyautogui.locateCenterOnScreen('user.png')
+pyautogui.click(x, y+50)
+
+pyautogui.typewrite('PTNPUNNEEAM\n')
+pyautogui.hotkey('tab')
+pyautogui.typewrite('QWERTY\n')
+#pyautogui.press('enter')
+
 
 
 # pyautogui.press('enter')  # press the Enter key
