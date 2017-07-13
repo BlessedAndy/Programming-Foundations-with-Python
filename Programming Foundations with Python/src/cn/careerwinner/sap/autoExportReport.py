@@ -36,8 +36,6 @@ pyautogui.hotkey('tab')
 pyautogui.typewrite('QWERTY\n')
 #pyautogui.press('enter')
 
-
-
 # pyautogui.press('enter')  # press the Enter key
 # pyautogui.press('f1')     # press the F1 key
 # pyautogui.press('left')   # press the left arrow key
