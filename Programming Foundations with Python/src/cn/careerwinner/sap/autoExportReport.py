@@ -19,7 +19,7 @@ sleep(7)
 pyautogui.hotkey('win', 'up')  # Win + up
 
 #STEP 2: Double click ERP icon
-x, y = pyautogui.locateCenterOnScreen('DoubleClickERP.png')
+x, y = pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP.png')
 pyautogui.doubleClick(x, y)
 
 #Logon system, input username and password
@@ -28,7 +28,7 @@ pyautogui.doubleClick(x, y)
 #P: QWERTY
 
 #Find input box
-x, y = pyautogui.locateCenterOnScreen('user.png')
+x, y = pyautogui.locateCenterOnScreen('autoExportReport/user.png')
 pyautogui.click(x, y+50)
 
 pyautogui.typewrite('PTNPUNNEEAM\n')
