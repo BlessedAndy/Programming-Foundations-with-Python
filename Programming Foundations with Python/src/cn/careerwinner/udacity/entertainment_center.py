@@ -4,7 +4,8 @@ Created on Sep 29, 2016
 @author: Andy Zhang
 '''
 
-import fresh_tomatoes
+# import fresh_tomatoes
+from . import fresh_tomatoes
 from . import media
 import sys
 
