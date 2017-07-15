@@ -8,7 +8,9 @@ from subprocess import Popen
 from time import sleep
 import time
 
+import sys
 
+print(sys.path)
 
 print(pyautogui.size())
 
@@ -20,6 +22,8 @@ pyautogui.FAILSAFE = True
 # inputDate = '05.2017'
 
 # Month,Year = inputDate.split('.')
+
+
 
 Month,Year = ['04', '2017']
 

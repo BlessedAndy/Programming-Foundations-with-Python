@@ -1,5 +1,6 @@
-import webbrowser
 import time
+import webbrowser
+
 
 var = 1
 
