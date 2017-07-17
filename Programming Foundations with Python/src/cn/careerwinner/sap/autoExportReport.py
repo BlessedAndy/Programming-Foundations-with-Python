@@ -8,7 +8,12 @@ from subprocess import Popen
 from time import sleep
 import time
 
-exportTool = ExportReport('2017', '03','3',r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports')
+import sys
+
+print(sys.path)
+
+# pyautogui.PAUSE = 2.5
+
 
 class ExportReport():
     
@@ -17,7 +22,7 @@ class ExportReport():
     def __init__(self, year, month, pause_seconds, save_folder):
         self.Year = year
         self.Month = month
-        self.PAUSE = pause_seconds
+        pyautogui.PAUSE = pause_seconds
         self.save_folder = save_folder
         
     def export_report(self):
@@ -28,7 +33,8 @@ class ExportReport():
         
 #         PAUSE = 2.5
         
-        pyautogui.PAUSE = self.PAUSE
+#         pyautogui.PAUSE = 7
+#         self.PAUSE
         pyautogui.FAILSAFE = True
         
         # inputDate = time.strftime("%m.%Y", time.localtime())
@@ -37,7 +43,7 @@ class ExportReport():
         
         # Month,Year = inputDate.split('.')
         
-        Month,Year = [self.Year, self.Month]
+        Year, Month = [self.Year, self.Month]
         
         inputDate = Month + Year
         
@@ -65,14 +71,14 @@ class ExportReport():
         x, y = pyautogui.locateCenterOnScreen('autoExportReport/user.png')
         pyautogui.click(x, y+50)
         
-        pyautogui.typewrite('PTNPUNNEEAM\n')
+        pyautogui.typewrite('PTNPUNNEEAM')
         pyautogui.hotkey('tab')
-        pyautogui.typewrite('QWERTY\n')
+        pyautogui.typewrite('QWERTY')
         pyautogui.press('enter')
         
         #TODO:
         #Multi user logon
-        if(pyautogui.locateCenterOnScreen('autoExportReport/user.png') is not None):
+        if(pyautogui.locateCenterOnScreen('autoExportReport/multiUsers.png') is not None):
             x, y = pyautogui.locateCenterOnScreen('autoExportReport/multiUsers.png')
             pyautogui.click(x-50, y-25)
             pyautogui.press('enter')  
@@ -104,13 +110,11 @@ class ExportReport():
         
         #Run the report
         sleep(3)
-        print('before run')
         pyautogui.hotkey('alt','p')
         pyautogui.press('a')
         # x, y = pyautogui.locateOnScreen('autoExportReporth/run.png', region=(0,0, 300, 400))
         # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/run.png')
         # pyautogui.click(x, y)
-        print('after run')
         
         # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/newSession.png')
         # pyautogui.click(x, y)
@@ -119,14 +123,16 @@ class ExportReport():
         pyautogui.press('enter')
         
         #Click export report
-        sleep(3)
+        sleep(1)
         # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/exportButton.png')
         # pyautogui.click(x, y)
         pyautogui.hotkey('alt','r')
         pyautogui.press('r')
         
+        print('after export report')
+        
         #Click Save to file
-        sleep(3)
+        sleep(1)
         pyautogui.hotkey('tab')
         pyautogui.hotkey('tab')
         pyautogui.hotkey('tab')
@@ -134,6 +140,8 @@ class ExportReport():
         pyautogui.press('enter')
         # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/saveToFile.png')
         # pyautogui.click(x, y)
+        
+        print('after save report')
         
         sleep(3)
         pyautogui.typewrite(savePath)
@@ -150,34 +158,48 @@ class ExportReport():
         sleep(3)
         
         pyautogui.hotkey('alt','a')
-        
-        # pyautogui.hotkey('tab')
-        # pyautogui.hotkey('tab')
-        # pyautogui.hotkey('tab')
-        # pyautogui.hotkey('tab')
-        # pyautogui.press('enter')
-        
-        sleep(3)
-        
-        pyautogui.hotkey('alt','a')
-        # pyautogui.hotkey('tab')
-        # pyautogui.hotkey('tab')
-        # pyautogui.hotkey('tab')
-        # pyautogui.hotkey('tab')
-        # pyautogui.press('enter')
-        
-        sleep(3)
-        
-        # pyautogui.hotkey('alt','a')
-        pyautogui.hotkey('tab')
-        pyautogui.hotkey('tab')
-        pyautogui.hotkey('tab')
-        pyautogui.hotkey('tab')
         pyautogui.press('enter')
         
-        sleep(3)
+        pyautogui.prompt(text='export report complete', title='info' , default='')
         
-        pyautogui.hotkey('alt','a')
+        # pyautogui.hotkey('tab')
+        # pyautogui.hotkey('tab')
+        # pyautogui.hotkey('tab')
+        # pyautogui.hotkey('tab')
+        # pyautogui.press('enter')
+        
+#         sleep(3)
+        
+#         pyautogui.hotkey('alt','a')
+        # pyautogui.hotkey('tab')
+        # pyautogui.hotkey('tab')
+        # pyautogui.hotkey('tab')
+        # pyautogui.hotkey('tab')
+        # pyautogui.press('enter')
+        
+#         sleep(3)
+        
+        # pyautogui.hotkey('alt','a')
+#         pyautogui.hotkey('tab')
+#         pyautogui.hotkey('tab')
+#         pyautogui.hotkey('tab')
+#         pyautogui.hotkey('tab')
+#         pyautogui.press('enter')
+#         
+#         sleep(3)
+#         
+#         pyautogui.hotkey('alt','a')
+        
+        #close report
+        x, y = pyautogui.locateCenterOnScreen('autoExportReport/close.png')
+        pyautogui.click(x,y)
+        
+        x, y = pyautogui.locateCenterOnScreen('autoExportReport/closeYes.png')
+        pyautogui.click(x,y)
+                
+        #close SAP GUI
+        x, y = pyautogui.locateCenterOnScreen('autoExportReport/close.png')
+        pyautogui.click(x,y)
 
 
 
