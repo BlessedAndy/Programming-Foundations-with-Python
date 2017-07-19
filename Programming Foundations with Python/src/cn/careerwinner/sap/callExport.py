@@ -5,9 +5,9 @@ Created on Jul 14, 2017
 '''
 import autoExportReport
 
-year = '2016'
+year = '2017'
 
-for x in range(10,16):
+for x in range(1,2):
     month = str(x)
     
     pause_seconds = 2  
