@@ -7,14 +7,17 @@ import autoExportReport
 
 year = '2017'
 
-for x in range(1,2):
+for x in range(1,16):
+    
     month = str(x)
     
-    pause_seconds = 2  
+    #month format: e.g: '01'
+    if(len(month)==1):
+        month = '0' + month
+    
+    pause_seconds = 6  
 
     save_folder = r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports'
-         
-    # savePath = r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports' + '\\' + inputDate + r'.DAT'
          
     reports = autoExportReport.ExportReport(year, month, pause_seconds, save_folder)
     reports.export_report()

@@ -14,7 +14,6 @@ print(sys.path)
 
 # pyautogui.PAUSE = 2.5
 
-
 class ExportReport():
     
 #     valid_ratings = ["G","PG","PG-13","R"]
@@ -45,7 +44,7 @@ class ExportReport():
         
         Year, Month = [self.Year, self.Month]
         
-        inputDate = Month + Year
+        inputDate =  Year + Month
         
         # savePath = r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports' + '\\' + inputDate + r'.DAT'
         savePath = self.save_folder + '\\' + inputDate + r'.DAT'
