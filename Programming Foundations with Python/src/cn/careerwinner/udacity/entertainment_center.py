@@ -4,8 +4,12 @@ Created on Sep 29, 2016
 @author: Andy Zhang
 '''
 
-import fresh_tomatoes
-import media
+# import fresh_tomatoes
+from . import fresh_tomatoes
+from . import media
+import sys
+
+print(sys.path)
 
 toy_story = media.Movie("Toy Story",
                         "A boy and his toy come into life",
