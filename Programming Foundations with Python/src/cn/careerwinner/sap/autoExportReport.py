@@ -8,11 +8,6 @@ from subprocess import Popen
 from time import sleep
 import time
 
-import sys
-
-
-print(sys.path)
-
 # pyautogui.PAUSE = 2.5
 
 class ExportReport():
@@ -28,8 +23,8 @@ class ExportReport():
     def export_report(self):
 #         webbrowser.open(self.trailer_youtube_url)
 #         webbrowser.open("http://music.163.com/#/outchain/2/409872465/")
-        
-        print(pyautogui.size())
+        start_time = time.time()
+        print('full screen size: '+pyautogui.size())
         
 #         PAUSE = 2.5
         
@@ -50,7 +45,7 @@ class ExportReport():
         # savePath = r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports' + '\\' + inputDate + r'.DAT'
         savePath = self.save_folder + '\\' + inputDate + r'.DAT'
         
-        print(savePath)
+        print('save path: '+savePath)
         
         SAPGUI = Popen(['start','SAPLogon'],shell=True)
         sleep(7)
@@ -458,3 +453,4 @@ pyautogui.hotkey('alt','a')
 #win.moveRel(x=0, y=0) # moves relative to the x, y of top-left corner of the window
 #win.clickRel(x=0, y=0, clicks=1, interval=0.0, button=â€™leftâ€™) # click relative to the x, y of top-left corner of the window
 #Additions to screenshot functionality so that it can capture specific windows instead of full screen.
+print(time.time() - start_time)
