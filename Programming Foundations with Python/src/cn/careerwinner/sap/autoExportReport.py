@@ -8,11 +8,7 @@ from subprocess import Popen
 from time import sleep
 import time
 
-# pyautogui.PAUSE = 2.5
-
 class ExportReport():
-    
-#     valid_ratings = ["G","PG","PG-13","R"]
     
     def __init__(self, year, month, pause_seconds, save_folder):
         self.Year = year
@@ -21,21 +17,10 @@ class ExportReport():
         self.save_folder = save_folder
         
     def export_report(self):
-#         webbrowser.open(self.trailer_youtube_url)
-#         webbrowser.open("http://music.163.com/#/outchain/2/409872465/")
-        start_time = time.time()
-        print('full screen size: '+pyautogui.size())
-        
-#         PAUSE = 2.5
-        
-#         pyautogui.PAUSE = 7
-#         self.PAUSE
         pyautogui.FAILSAFE = True
         
         # inputDate = time.strftime("%m.%Y", time.localtime())
-        
         # inputDate = '05.2017'
-        
         # Month,Year = inputDate.split('.')
         
         Year, Month = [self.Year, self.Month]
@@ -57,12 +42,15 @@ class ExportReport():
         if(pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP_Server.png') is not None):
             x, y = pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP_Server.png')
             pyautogui.doubleClick(x, y)
+            print('enter server')
         elif(pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP.png') is not None):
             x, y = pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP.png')
             pyautogui.doubleClick(x, y)
+            print('enter laptop icon')
         elif(pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP_select.png') is not None):
             x, y = pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP_select.png')
             pyautogui.doubleClick(x, y)
+            print('enter select')
         else:
             pyautogui.alert(text='There is no DED system found', title='System no found', button='OK')
             
@@ -77,10 +65,12 @@ class ExportReport():
         pyautogui.click(x, y+50)
         
         pyautogui.typewrite('PTNPUNNEEAM\n')
+        #Server
+#         pyautogui.typewrite('PTNPUNNEEAM')
         pyautogui.hotkey('tab')
         pyautogui.typewrite('QWERTY')
         pyautogui.press('enter')
-        
+                
         #TODO:
         #Multi user logon
         if(pyautogui.locateCenterOnScreen('autoExportReport/multiUsers.png') is not None):
@@ -218,11 +208,11 @@ class ExportReport():
 #         pyautogui.hotkey('alt','a')
         
         #close report
+
         sleep(3)
         pyautogui.hotkey('alt','f4')
         pyautogui.press('tab')
         pyautogui.press('enter')
-        print('report界面关闭了！')
 #         x, y = pyautogui.locateCenterOnScreen('autoExportReport/close.png')
 #         pyautogui.click(x,y)
         
@@ -239,159 +229,159 @@ class ExportReport():
 #         x, y = pyautogui.locateCenterOnScreen('autoExportReport/close.png')
 #         pyautogui.click(x,y)
 
-print(pyautogui.size())
-
-pyautogui.PAUSE = 2.5
-pyautogui.FAILSAFE = True
-
-# inputDate = time.strftime("%m.%Y", time.localtime())
-
-# inputDate = '05.2017'
-
-# Month,Year = inputDate.split('.')
-
-
-
-Month,Year = ['04', '2017']
-
-inputDate = Month + Year
-
-savePath = r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports' + '\\' + inputDate + r'.DAT'
-
-print(savePath)
-
-SAPGUI = Popen(['start','SAPLogon'],shell=True)
-sleep(7)
-
-#STEP 1: Open SAP GUI
-pyautogui.hotkey('win', 'up')  # Win + up
-
-#STEP 2: Double click ERP icon
-x, y = pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP.png')
-pyautogui.doubleClick(x, y)
-
-#Logon system, input username and password
-#Client: 210/220
-#U: PTNPUNNEEAM
-#P: QWERTY
-
-#Find input box
-x, y = pyautogui.locateCenterOnScreen('autoExportReport/user.png')
-pyautogui.click(x, y+50)
-
-pyautogui.typewrite('PTNPUNNEEAM\n')
-pyautogui.hotkey('tab')
-pyautogui.typewrite('QWERTY\n')
-pyautogui.press('enter')
-
-#TODO:
-#Multi user logon
-if(pyautogui.locateCenterOnScreen('autoExportReport/user.png') is not None):
-    x, y = pyautogui.locateCenterOnScreen('autoExportReport/multiUsers.png')
-    pyautogui.click(x-50, y-25)
-    pyautogui.press('enter')  
-
-
-#input t-code
-pyautogui.typewrite('zglr003\n')
+# print(pyautogui.size())
+# 
+# pyautogui.PAUSE = 2.5
+# pyautogui.FAILSAFE = True
+# 
+# # inputDate = time.strftime("%m.%Y", time.localtime())
+# 
+# # inputDate = '05.2017'
+# 
+# # Month,Year = inputDate.split('.')
+# 
+# 
+# 
+# Month,Year = ['04', '2017']
+# 
+# inputDate = Month + Year
+# 
+# savePath = r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports' + '\\' + inputDate + r'.DAT'
+# 
+# print(savePath)
+# 
+# SAPGUI = Popen(['start','SAPLogon'],shell=True)
+# sleep(7)
+# 
+# #STEP 1: Open SAP GUI
+# pyautogui.hotkey('win', 'up')  # Win + up
+# 
+# #STEP 2: Double click ERP icon
+# x, y = pyautogui.locateCenterOnScreen('autoExportReport/DoubleClickERP.png')
+# pyautogui.doubleClick(x, y)
+# 
+# #Logon system, input username and password
+# #Client: 210/220
+# #U: PTNPUNNEEAM
+# #P: QWERTY
+# 
+# #Find input box
+# x, y = pyautogui.locateCenterOnScreen('autoExportReport/user.png')
+# pyautogui.click(x, y+50)
+# 
+# pyautogui.typewrite('PTNPUNNEEAM\n')
+# pyautogui.hotkey('tab')
+# pyautogui.typewrite('QWERTY\n')
 # pyautogui.press('enter')
-
-#input FIS
-pyautogui.moveTo(800, 10)
-sleep(3)
-x, y = pyautogui.locateCenterOnScreen('autoExportReport/FIS.png')
-pyautogui.click(x, y)
-pyautogui.typewrite('สตง')
-
-#input year
-pyautogui.hotkey('tab')
-pyautogui.typewrite(Year)
-
-#input From Month
-pyautogui.hotkey('tab')
-pyautogui.typewrite(Month)
-
-#input To Month
-pyautogui.hotkey('tab')
-pyautogui.typewrite(Month)
-# pyautogui.press('enter')
-
-#Run the report
-sleep(3)
-print('before run')
-pyautogui.hotkey('alt','p')
-pyautogui.press('a')
-# x, y = pyautogui.locateOnScreen('autoExportReporth/run.png', region=(0,0, 300, 400))
-# x, y = pyautogui.locateCenterOnScreen('autoExportReporth/run.png')
+# 
+# #TODO:
+# #Multi user logon
+# if(pyautogui.locateCenterOnScreen('autoExportReport/user.png') is not None):
+#     x, y = pyautogui.locateCenterOnScreen('autoExportReport/multiUsers.png')
+#     pyautogui.click(x-50, y-25)
+#     pyautogui.press('enter')  
+# 
+# 
+# #input t-code
+# pyautogui.typewrite('zglr003\n')
+# # pyautogui.press('enter')
+# 
+# #input FIS
+# pyautogui.moveTo(800, 10)
+# sleep(3)
+# x, y = pyautogui.locateCenterOnScreen('autoExportReport/FIS.png')
 # pyautogui.click(x, y)
-print('after run')
-
-# x, y = pyautogui.locateCenterOnScreen('autoExportReporth/newSession.png')
-# pyautogui.click(x, y)
-pyautogui.hotkey('up')
-pyautogui.hotkey('up')
-pyautogui.press('enter')
-
-#Click export report
-sleep(3)
-# x, y = pyautogui.locateCenterOnScreen('autoExportReporth/exportButton.png')
-# pyautogui.click(x, y)
-pyautogui.hotkey('alt','r')
-pyautogui.press('r')
-
-#Click Save to file
-sleep(3)
-pyautogui.hotkey('tab')
-pyautogui.hotkey('tab')
-pyautogui.hotkey('tab')
-pyautogui.hotkey('tab')
-pyautogui.press('enter')
-# x, y = pyautogui.locateCenterOnScreen('autoExportReporth/saveToFile.png')
-# pyautogui.click(x, y)
-
-sleep(3)
-pyautogui.typewrite(savePath)
-pyautogui.press('enter')
-
-pyautogui.hotkey('alt','a')
-
+# pyautogui.typewrite('สตง')
+# 
+# #input year
+# pyautogui.hotkey('tab')
+# pyautogui.typewrite(Year)
+# 
+# #input From Month
+# pyautogui.hotkey('tab')
+# pyautogui.typewrite(Month)
+# 
+# #input To Month
+# pyautogui.hotkey('tab')
+# pyautogui.typewrite(Month)
+# # pyautogui.press('enter')
+# 
+# #Run the report
+# sleep(3)
+# print('before run')
+# pyautogui.hotkey('alt','p')
+# pyautogui.press('a')
+# # x, y = pyautogui.locateOnScreen('autoExportReporth/run.png', region=(0,0, 300, 400))
+# # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/run.png')
+# # pyautogui.click(x, y)
+# print('after run')
+# 
+# # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/newSession.png')
+# # pyautogui.click(x, y)
+# pyautogui.hotkey('up')
+# pyautogui.hotkey('up')
+# pyautogui.press('enter')
+# 
+# #Click export report
+# sleep(3)
+# # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/exportButton.png')
+# # pyautogui.click(x, y)
+# pyautogui.hotkey('alt','r')
+# pyautogui.press('r')
+# 
+# #Click Save to file
+# sleep(3)
 # pyautogui.hotkey('tab')
 # pyautogui.hotkey('tab')
 # pyautogui.hotkey('tab')
 # pyautogui.hotkey('tab')
 # pyautogui.press('enter')
-
-sleep(3)
-
-pyautogui.hotkey('alt','a')
-
-# pyautogui.hotkey('tab')
-# pyautogui.hotkey('tab')
-# pyautogui.hotkey('tab')
-# pyautogui.hotkey('tab')
+# # x, y = pyautogui.locateCenterOnScreen('autoExportReporth/saveToFile.png')
+# # pyautogui.click(x, y)
+# 
+# sleep(3)
+# pyautogui.typewrite(savePath)
 # pyautogui.press('enter')
-
-sleep(3)
-
-pyautogui.hotkey('alt','a')
-# pyautogui.hotkey('tab')
-# pyautogui.hotkey('tab')
-# pyautogui.hotkey('tab')
-# pyautogui.hotkey('tab')
-# pyautogui.press('enter')
-
-sleep(3)
-
+# 
 # pyautogui.hotkey('alt','a')
-pyautogui.hotkey('tab')
-pyautogui.hotkey('tab')
-pyautogui.hotkey('tab')
-pyautogui.hotkey('tab')
-pyautogui.press('enter')
-
-sleep(3)
-
-pyautogui.hotkey('alt','a')
+# 
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.press('enter')
+# 
+# sleep(3)
+# 
+# pyautogui.hotkey('alt','a')
+# 
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.press('enter')
+# 
+# sleep(3)
+# 
+# pyautogui.hotkey('alt','a')
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.hotkey('tab')
+# # pyautogui.press('enter')
+# 
+# sleep(3)
+# 
+# # pyautogui.hotkey('alt','a')
+# pyautogui.hotkey('tab')
+# pyautogui.hotkey('tab')
+# pyautogui.hotkey('tab')
+# pyautogui.hotkey('tab')
+# pyautogui.press('enter')
+# 
+# sleep(3)
+# 
+# pyautogui.hotkey('alt','a')
 
 
 # pyautogui.press('enter')  # press the Enter key
@@ -453,4 +443,3 @@ pyautogui.hotkey('alt','a')
 #win.moveRel(x=0, y=0) # moves relative to the x, y of top-left corner of the window
 #win.clickRel(x=0, y=0, clicks=1, interval=0.0, button=â€™leftâ€™) # click relative to the x, y of top-left corner of the window
 #Additions to screenshot functionality so that it can capture specific windows instead of full screen.
-print(time.time() - start_time)
