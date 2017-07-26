@@ -3,13 +3,57 @@ Created on Jul 14, 2017
 
 @author: I310003
 '''
-# import autoExportReport
+import autoExportReport
 import time
+import pyautogui
+from subprocess import Popen
+import os
+import sys
 
-year = '2015'
+from dateutil.relativedelta import relativedelta
 
-print(time.gmtime())
-print('enter very beginning')
+import datetime
+
+print(datetime.timedelta(seconds=60))
+
+now = datetime.datetime.now()
+last_month = now.month-1 if now.month > 1 else 12
+last_year = now.year - 1
+
+print(now)
+
+print('' + str(last_month))
+print(last_year)
+
+print(time.time())
+
+# today = datetime.date.today()
+# previous_month = datetime(today.year, today.month + 1, today.day)
+# 
+# three_mon_rel = relativedelta(months=3)
+# print(today + three_mon_rel)
+# 
+# print(today)
+# print(previous_month)
+# 
+# year = '2015'
+# 
+# print('enter very beginning')
+# 
+# SAPGUI = Popen(['start','SAPLogon'],shell=True)
+# 
+# time.sleep(7)
+# 
+# win = pyautogui.getWindow('SAP Logon')
+# 
+# print(win.get_position())
+# 
+# 
+# print(os.path.abspath(os.curdir))
+# print(sys.argv[0])
+# print(os.path.dirname(__file__))
+
+
 
 # for x in range(1,16):
 #     
