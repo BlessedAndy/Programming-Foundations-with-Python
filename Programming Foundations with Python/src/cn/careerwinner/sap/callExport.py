@@ -19,9 +19,12 @@ print('Last Year: ' + str(last_year))
 # year = '2015'
 # year = now.year
 
+#Wait for logoff server
+#time.sleep(60)
 start_time = time.time();
 
-for year in range(2015, now.year):
+for y in range(2015, now.year):
+    year = str(y)
     for x in range(1,last_month if year == now.year else 13):
         month = str(x)
      

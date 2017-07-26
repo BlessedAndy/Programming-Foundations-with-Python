@@ -70,9 +70,9 @@ class ExportReport():
         x, y = pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\user.png')
         pyautogui.click(x, y+50)
         
-        pyautogui.typewrite('PTNPUNNEEAM\n')
+#         pyautogui.typewrite('PTNPUNNEEAM\n')
         #Server version
-        #pyautogui.typewrite('PTNPUNNEEAM')
+        pyautogui.typewrite('PTNPUNNEEAM')
         pyautogui.hotkey('tab')
         pyautogui.typewrite('QWERTY')
         pyautogui.press('enter')
