@@ -13,19 +13,26 @@ import sys
 from dateutil.relativedelta import relativedelta
 
 import datetime
+import pyautogui
 
-print(datetime.timedelta(seconds=60))
+# print(datetime.timedelta(seconds=60))
+# 
+# now = datetime.datetime.now()
+# last_month = now.month-1 if now.month > 1 else 12
+# last_year = now.year - 1
+# 
+# print(now)
+# 
+# print('' + str(last_month))
+# print(last_year)
+# 
+# print(time.time())
 
-now = datetime.datetime.now()
-last_month = now.month-1 if now.month > 1 else 12
-last_year = now.year - 1
 
-print(now)
 
-print('' + str(last_month))
-print(last_year)
+print(pyautogui.prompt(text='text', title='title' , default='username'))
 
-print(time.time())
+print(pyautogui.password(text='text', title='title', default='password', mask='*'))
 
 # today = datetime.date.today()
 # previous_month = datetime(today.year, today.month + 1, today.day)

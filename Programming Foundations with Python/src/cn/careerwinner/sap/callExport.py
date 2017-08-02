@@ -40,6 +40,6 @@ for y in range(2015, now.year):
          
         reports = autoExportReport.ExportReport(year, month, pause_seconds, save_folder)
         reports.export_report()
-        print('Running time for year :' + year + datetime.timedelta(seconds=(time.time()-start_time)))
+        print('Running time for year ' + str(year) + ' : ' + str(datetime.timedelta(seconds=(time.time()-start_time))))
 
-print('Total running time:' + datetime.timedelta(seconds=(time.time()-start_time)))
+print('Total running time:' + str(datetime.timedelta(seconds=(time.time()-start_time))))
