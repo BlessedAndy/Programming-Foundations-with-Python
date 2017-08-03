@@ -6,6 +6,8 @@ Created on Jul 27, 2017
 
 import wx
 
+import gettext
+
 class GUIFrame(wx.Frame):
     """
     A Frame that says Hello World

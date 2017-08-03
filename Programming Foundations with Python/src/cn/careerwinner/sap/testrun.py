@@ -11,9 +11,65 @@ import os
 import sys
 
 from dateutil.relativedelta import relativedelta
-
-import datetime
 import pyautogui
+from datetime import date
+import time
+
+
+import logging
+
+# SAPGUI = Popen(['start','SAPLogon'],shell=True)
+# 
+# time.sleep(60)
+# 
+# print(str(SAPGUI.pid()))
+
+import schedule
+import time
+import callExport
+
+def job():
+    print("I'm working...")
+    print(time.clock())
+    callExport()
+
+schedule.every(1).minutes.do(job)
+schedule.every().hour.do(job)
+schedule.every().day.at("15:00").do(job)
+schedule.every().monday.do(job)
+schedule.every().wednesday.at("13:15").do(job)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
+# logger = logging.getLogger(__name__)
+# logger.setLevel(logging.INFO)
+# 
+# # create a file handler
+# handler = logging.FileHandler('exportReport.log')
+# handler.setLevel(logging.INFO)
+# 
+# # create a logging format
+# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# handler.setFormatter(formatter)
+# 
+# # add the handlers to the logger
+# logger.addHandler(handler)
+# 
+# logger.info('Hello baby')
+
+# for i in range(1,9):
+#     eight_months_before = date.today() + relativedelta(months = -i)
+#     year = str(eight_months_before.year)
+#     month = str(eight_months_before.month)
+#     #month format: e.g: '01'
+#     if(len(month)==1):
+#         month = '0' + month
+#     pause_seconds = 2 
+#     print('Year Month : '+str(year)+str(month))
+    
+
 
 # print(datetime.timedelta(seconds=60))
 # 
@@ -30,9 +86,9 @@ import pyautogui
 
 
 
-print(pyautogui.prompt(text='text', title='title' , default='username'))
+# print(pyautogui.prompt(text='text', title='title' , default='username'))
 
-print(pyautogui.password(text='text', title='title', default='password', mask='*'))
+# print(pyautogui.password(text='text', title='title', default='password', mask='*'))
 
 # today = datetime.date.today()
 # previous_month = datetime(today.year, today.month + 1, today.day)
@@ -44,7 +100,6 @@ print(pyautogui.password(text='text', title='title', default='password', mask='*
 # print(previous_month)
 # 
 # year = '2015'
-# 
 # print('enter very beginning')
 # 
 # SAPGUI = Popen(['start','SAPLogon'],shell=True)

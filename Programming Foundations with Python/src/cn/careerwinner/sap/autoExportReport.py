@@ -7,6 +7,7 @@ import pyautogui
 from subprocess import Popen
 from time import sleep
 import os
+import logging
 
 class ExportReport():
     
@@ -32,9 +33,26 @@ class ExportReport():
         # savePath = r'C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports' + '\\' + inputDate + r'.DAT'
         savePath = self.save_folder + '\\' + inputDate + r'.dat'
         
-        print('save path: '+savePath)
+        print('save file: '+savePath)
+        
+        logger = logging.getLogger(__name__)
+        logger.setLevel(logging.INFO)
+        
+        # create a file handler
+        handler = logging.FileHandler('exportReport.log')
+        handler.setLevel(logging.INFO)
+        
+        # create a logging format
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        handler.setFormatter(formatter)
+        
+        # add the handlers to the logger
+        logger.addHandler(handler)
+        logger.info('start exporting report of year month: ' + inputDate)
+        logger.info('save Path: ' + savePath)
         
         SAPGUI = Popen(['start','SAPLogon'],shell=True)
+        logger.info('start SAPGUI')
         sleep(7)
         
         #STEP 1: Open SAP GUI
@@ -45,19 +63,20 @@ class ExportReport():
         if(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\DoubleClickERP_Server.png') is not None):
             x, y = pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\DoubleClickERP_Server.png')
             pyautogui.doubleClick(x, y)
-            print('enter server')
+            logger.info('DoubleClickERP_Server')
         elif(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\DoubleClickERP.png') is not None):
             x, y = pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\DoubleClickERP.png')
             pyautogui.doubleClick(x, y)
-            print('enter laptop icon')
+            logger.info('DoubleClickERP')
         elif(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\DoubleClickERP_select.png') is not None):
             x, y = pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\DoubleClickERP_select.png')
             pyautogui.doubleClick(x, y)
-            print('enter select')
+            logger.info('DoubleClickERP_select')
         else:
             pyautogui.alert(text='There is no DED system found', title='System no found', button='OK')
+            logger.error('There is no system found')
+            raise RuntimeError('There is no system found')
             
-        
         #Logon system, input username and password
         #Client: 210/220
         #U: PTNPUNNEEAM
@@ -76,7 +95,9 @@ class ExportReport():
         pyautogui.hotkey('tab')
         pyautogui.typewrite('QWERTY')
         pyautogui.press('enter')
-                
+        
+        logger.info('logon the ERP system') 
+                       
         #TODO:
         #Multi user logon
         sleep(2)
@@ -87,6 +108,7 @@ class ExportReport():
             pyautogui.hotkey('tab')
             pyautogui.hotkey('up')
             pyautogui.press('enter')
+            logger.info('multi user loged on') 
         
         
         #input t-code
@@ -96,12 +118,14 @@ class ExportReport():
         pyautogui.press('left')
         pyautogui.typewrite('zglr003\n')
         # pyautogui.press('enter')
+        logger.info('run the zglr003 report') 
         
         #input FIS
         pyautogui.moveTo(800, 10)
         sleep(3)
         x, y = pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\FIS.png')
         pyautogui.click(x, y)
+        logger.info('type in parameters for export reports') 
         pyautogui.typewrite('สตง')
         
         #input year
@@ -141,8 +165,6 @@ class ExportReport():
         pyautogui.hotkey('alt','r')
         pyautogui.press('r')
         
-        print('after export report')
-        
         #Click Save to file
         sleep(1)
         pyautogui.hotkey('tab')
@@ -152,8 +174,6 @@ class ExportReport():
         pyautogui.press('enter')
         # x, y = pyautogui.locateCenterOnScreen(picPath + '\\autoExportReporth/saveToFile.png')
         # pyautogui.click(x, y)
-        
-        print('after save report')
         
         sleep(2)
         pyautogui.typewrite(savePath)
@@ -174,10 +194,12 @@ class ExportReport():
         pyautogui.moveTo(800,10)
 #         pyautogui.press('enter')
 
+        logger.info('save report of ' + inputDate) 
+
         #If already exist, replace it
         sleep(3)
         if(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\alreadyexist.png') is not None):
-            print('entered the report exist')
+            logger.info(inputDate + '.dat already exist.')
             pyautogui.press('enter')
             #Allow    
             sleep(3)
@@ -186,6 +208,54 @@ class ExportReport():
             pyautogui.hotkey('tab')
             pyautogui.hotkey('tab')
             pyautogui.press('enter')
+
+        elif(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\alreadyexist2.png') is not None):
+            logger.info(inputDate + '.dat already exist2.')
+            pyautogui.press('enter')
+            #Allow    
+            sleep(3)
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.press('enter')
+            
+        elif(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\alreadyexist3.png') is not None):
+            logger.info(inputDate + '.dat already exist3.')
+            pyautogui.press('enter')
+            #Allow    
+            sleep(3)
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.press('enter')
+            
+        elif(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\alreadyexist4.png') is not None):
+            logger.info(inputDate + '.dat already exist4.')
+            pyautogui.press('enter')
+            #Allow    
+            sleep(3)
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.press('enter')
+            
+        elif(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport\\alreadyexist5.png') is not None):
+            print('entered the report exist')
+            logger.info(inputDate + '.dat already exist5.')
+            pyautogui.press('enter')
+            #Allow    
+            sleep(3)
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.hotkey('tab')
+            pyautogui.press('enter')
+            
+        else:
+            logger.info(inputDate + '.dat is the first time to export.')
         
         #Confirm
         sleep(3)
@@ -239,7 +309,8 @@ class ExportReport():
         #close SAP GUI
         sleep(1)
         pyautogui.hotkey('alt','f4')
-        print('SAP GUI closed.\n')
+        logger.info('close SAPGUI') 
+        print('SAP GUI closed')
 #         pyautogui.hotkey('tab')
 #         pyautogui.press('enter')
 #         x, y = pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/close.png')

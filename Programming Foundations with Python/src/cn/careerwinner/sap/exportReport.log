@@ -1,0 +1,45 @@
+2017-08-02 19:16:01,604 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-02 19:16:25,903 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-02 19:16:25,903 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201707.dat
+2017-08-02 19:18:59,453 - autoExportReport - INFO - start exporting report of year month: 201706
+2017-08-02 19:18:59,453 - autoExportReport - INFO - start exporting report of year month: 201706
+2017-08-02 19:18:59,454 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201706.dat
+2017-08-02 19:18:59,454 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201706.dat
+2017-08-02 19:32:58,563 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-02 19:32:58,563 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201707.dat
+2017-08-02 19:32:58,569 - autoExportReport - INFO - start SAPGUI
+2017-08-02 19:33:36,316 - autoExportReport - INFO - logon the ERP system
+2017-08-02 19:33:50,092 - autoExportReport - INFO - run the zglr003 report
+2017-08-02 19:35:11,614 - autoExportReport - INFO - save report of 201707
+2017-08-02 19:38:57,763 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-02 19:38:57,763 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201707.dat
+2017-08-02 19:38:57,768 - autoExportReport - INFO - start SAPGUI
+2017-08-02 19:39:33,560 - autoExportReport - INFO - logon the ERP system
+2017-08-02 19:39:47,248 - autoExportReport - INFO - run the zglr003 report
+2017-08-02 19:41:08,799 - autoExportReport - INFO - save report of 201707
+2017-08-02 20:01:06,944 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-02 20:01:06,945 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201707.dat
+2017-08-02 20:01:06,950 - autoExportReport - INFO - start SAPGUI
+2017-08-02 20:01:42,939 - autoExportReport - INFO - logon the ERP system
+2017-08-02 20:01:56,661 - autoExportReport - INFO - run the zglr003 report
+2017-08-02 20:03:18,063 - autoExportReport - INFO - save report of 201707
+2017-08-02 20:03:23,173 - autoExportReport - INFO - 201707.dat already exist2.
+2017-08-02 20:03:56,203 - autoExportReport - INFO - close SAPGUI
+2017-08-02 20:03:56,206 - autoExportReport - INFO - start exporting report of year month: 201706
+2017-08-02 20:03:56,206 - autoExportReport - INFO - start exporting report of year month: 201706
+2017-08-02 20:03:56,206 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201706.dat
+2017-08-02 20:03:56,206 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201706.dat
+2017-08-02 20:03:56,223 - autoExportReport - INFO - start SAPGUI
+2017-08-02 20:03:56,223 - autoExportReport - INFO - start SAPGUI
+2017-08-02 20:24:35,994 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-02 20:24:35,995 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201707.dat
+2017-08-02 20:24:36,000 - autoExportReport - INFO - start SAPGUI
+2017-08-02 20:25:00,276 - autoExportReport - ERROR - There is no system found
+2017-08-03 14:59:48,209 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-03 14:59:48,209 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201707.dat
+2017-08-03 14:59:48,217 - autoExportReport - INFO - start SAPGUI
+2017-08-03 15:14:56,601 - autoExportReport - INFO - start exporting report of year month: 201707
+2017-08-03 15:14:56,601 - autoExportReport - INFO - save Path: C:\Users\I310003\Documents\SAP\Projects\PEA\Automatical\reports\201707.dat
+2017-08-03 15:14:56,607 - autoExportReport - INFO - start SAPGUI
+2017-08-03 15:15:13,469 - autoExportReport - INFO - DoubleClickERP
+2017-08-03 15:15:32,711 - autoExportReport - INFO - logon the ERP system
