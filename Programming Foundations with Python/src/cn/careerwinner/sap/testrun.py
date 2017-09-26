@@ -27,21 +27,108 @@ import logging
 import schedule
 import time
 import callExport
+import os
+import util
 
-def job():
-    print("I'm working...")
-    print(time.clock())
-    callExport()
+import smtplib
+from time import sleep
 
-schedule.every(1).minutes.do(job)
-schedule.every().hour.do(job)
-schedule.every().day.at("15:00").do(job)
-schedule.every().monday.do(job)
-schedule.every().wednesday.at("13:15").do(job)
+util.checkReportFiles()
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# sleep(1)
+# for i in range(1,4):
+#     pyautogui.hotkey('backspace')
+#1
+# picPath = os.path.dirname(__file__)
+# 
+# def confirm_this_step(stepSignatures):
+#     timer = 1
+#     n = len(stepSignatures)
+#     while(True):
+#         for i in range (0,n):
+#             stepSignature = stepSignatures[i]
+#             print('Waiting for Step ' + stepSignature + ' complete ...')
+# 
+#             if(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/' + stepSignature + '.png') is not None):
+#                 print('Step ' + stepSignature + ' confirmed.')
+# #                 logger.info('Step ' + stepSignature + ' confirmed.')
+#                 return True
+# #       logger.info('Waiting for Step ' + stepSignature + ' complete ...')
+# 
+#         if(timer >= 20):
+#             print('Step ' + stepSignature + ' time out!')
+# #            logger.info('Step ' + stepSignature + ' time out!')
+# #                     util.sendEmail()
+#             return False
+#         print(timer)
+#         timer = timer + 1   
+#     
+# stepSignatures = ['confirm_logon','confirm_logon_1','confirm_logon_2','confirm_logon_3','confirm_logon_4']
+# print(confirm_this_step(stepSignatures))
+# callList = ['a','b','c']
+
+# def testCallList(it):
+#     i = len(it)
+#     return i
+# 
+# callList = ['a','b','c']
+# it = 'string'
+# print(testCallList(callList))
+
+# sender = 'SAP_DataServices@portalnet.co.th'
+# receivers = ['andy.zhang05@sap.com']
+# 
+# message = """From: From Data Services Python Export Report Tool
+# To: To Person <andy.zhang05@sap.com>
+# Subject: Python auto export tool didn't works well
+# 
+# Dear Colleagues,
+# 
+# Please check the reports files for Data Services jobs, it seems that the file has not ready.
+#     Notes: 1. If you want the export tool run automatically, please use logoff.bat file to logoff remote desktop.
+#            2. If you want to run the export tool manually, please don't minimize the remote desktop.
+#            
+# FROM REPORT EXPORT TOOL 
+# """
+# 
+# # try:
+# smtpObj = smtplib.SMTP('172.30.46.146')
+# smtpObj.sendmail(sender, receivers, message)         
+# print("Successfully sent email")
+# except SMTPException:
+#    print("Error: unable to send email")
+
+# picPath = os.path.dirname(__file__)
+# print(picPath)
+# while(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/confirm_logon.png') is None and pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/reportReady1.png') is None and pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/reportReady2.png') is None and pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/reportReady3.png') is None):
+#     print('waiting for report loading ...')
+#      
+# if(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/confirm_logon.png') is not None):
+#     print('logon')
+# 
+# if(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/reportReady1.png') is not None):
+#     print('reportReady1')# 
+# if(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/reportReady2.png') is not None):
+#     print('reportReady2')
+# 
+# if(pyautogui.locateCenterOnScreen(picPath + '\\autoExportReport/reportReady3.png') is not None):
+#     print('reportReady3')
+    
+# 
+# def job():
+#     print("I'm working...")
+#     print(time.clock())
+#     callExport()
+# 
+# schedule.every(1).minutes.do(job)
+# schedule.every().hour.do(job)
+# schedule.every().day.at("15:00").do(job)
+# schedule.every().monday.do(job)
+# schedule.every().wednesday.at("13:15").do(job)
+# 
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
 
 # logger = logging.getLogger(__name__)
 # logger.setLevel(logging.INFO)

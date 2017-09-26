@@ -1,24 +1,56 @@
 '''
 Created on Aug 3, 2017
 
-@author: I310003
+@author: Andy Zhang
 '''
 
 import schedule
 import time
 import callExport
+import util
+from datetime import date
 
-def job():
-    print("I'm working...")
-    print(time.clock())
-    callExport()
+def exportReport():
+    #Open it only when require a full load
+#     callExport.fullRun()
 
-schedule.every(1).minutes.do(job)
-schedule.every().hour.do(job)
-schedule.every().day.at("15:00").do(job)
-schedule.every().monday.do(job)
-schedule.every().wednesday.at("13:15").do(job)
+    #comment this if you require a full load
+    callExport.run()
+        
+def checkFiles():
+    util.checkReportFiles()
 
+print('PLEASE DO NOT CLOSE THIS CONSOLE!\n \nThis console is export erp reports scheduler.\n')
+print('Please close remote desktop with - leave remote desktop - bat file')
+
+#############################################################################
+#    Here the todayDate should be the date you want the export tool run.    #
+#                                                                           #
+#                                                                           #
+#############################################################################
+
+todayDate = str(date.today().day)
+
+#Daily job, only skip 23
+
+if(todayDate != '23'):
+    schedule.every().day.at("01:12").do(exportReport)
+    # schedule for check Report files
+    schedule.every().day.at("02:12").do(checkFiles)
+    print('begin to exporting report and check files')
+
+#Monthly Job
+if(todayDate == '23'):
+    # schedule for export report
+    schedule.every().day.at("01:12").do(exportReport)
+    # schedule for check Report files
+    schedule.every().day.at("02:12").do(checkFiles)
+    print('begin to exporting report and check files')
+    
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    #sleep 5 MIN, you can change the time here to change the check rate
+    time.sleep(60*5)
+
+
+    
