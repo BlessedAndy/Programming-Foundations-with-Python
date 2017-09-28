@@ -293,7 +293,7 @@ def checkDict(jDict, link):
     print ('Number of bags of words is ' + str(len(jDict) - len(link)))
     print ('###################################################')
     
-    save = raw_input('Shall I save? (y/n)')
+    save = input('Shall I save? (y/n)')
     
     if save == 'y':
         
