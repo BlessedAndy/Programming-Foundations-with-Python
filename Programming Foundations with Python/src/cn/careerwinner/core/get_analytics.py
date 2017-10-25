@@ -47,5 +47,5 @@ def getWordCloud(skill_frame):
     tmp.to_file("cloudSkills.png")
     
     plt.imshow(default_colors)
-    plt.axis("off")
+    plt.axis("off") 
     plt.show()

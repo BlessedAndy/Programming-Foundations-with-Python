@@ -29,28 +29,28 @@ print('Please close remote desktop with - leave remote desktop - bat file')
 #                                                                           #
 #############################################################################
 
-todayDate = str(date.today().day)
-
-#Daily job, only skip 23
-
-if(todayDate != '23'):
-    schedule.every().day.at("01:12").do(exportReport)
-    # schedule for check Report files
-    schedule.every().day.at("02:12").do(checkFiles)
-    print('begin to exporting report and check files')
-
-#Monthly Job
-if(todayDate == '23'):
-    # schedule for export report
-    schedule.every().day.at("01:12").do(exportReport)
-    # schedule for check Report files
-    schedule.every().day.at("02:12").do(checkFiles)
-    print('begin to exporting report and check files')
-    
 while True:
     schedule.run_pending()
     #sleep 5 MIN, you can change the time here to change the check rate
     time.sleep(60*5)
+    
+    todayDate = str(date.today().day)
+
+    #Daily job, only skip 23
+    
+    if(todayDate != '23'):
+        schedule.every().day.at("01:12").do(exportReport)
+        # schedule for check Report files
+        schedule.every().day.at("03:12").do(checkFiles)
+        print('begin to exporting report and check files')
+    
+    #Monthly Job
+    if(todayDate == '23'):
+        # schedule for export report
+        schedule.every().day.at("01:12").do(exportReport)
+        # schedule for check Report files
+        schedule.every().day.at("03:12").do(checkFiles)
+        print('begin to exporting report and check files')
 
 
     
