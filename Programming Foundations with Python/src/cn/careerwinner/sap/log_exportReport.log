@@ -654,3 +654,6 @@
 2017-09-02 20:39:16,444 - autoExportReport - INFO - save Path: D:\FI\data\erp\201708.dat
 2017-09-02 20:39:16,454 - autoExportReport - INFO - start SAPGUI
 2017-09-02 20:39:52,474 - autoExportReport - INFO - enter PED system
+2017-09-27 21:48:10,601 - autoExportReport - INFO - start exporting report of year month: 201708
+2017-09-27 21:48:10,603 - autoExportReport - INFO - save Path: D:\FI\data\erp\201708.dat
+2017-09-27 21:48:10,609 - autoExportReport - INFO - start SAPGUI

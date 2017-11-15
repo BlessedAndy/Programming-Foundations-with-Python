@@ -38,24 +38,26 @@ while True:
     time.sleep(60*5)
     
     newDay = str(date.today().day)
-
+    print('New Day: ' + newDay)
     #Daily job, only skip 23
     
-    if(todayDate != newDay & newDay != '23'):
+    if(todayDate != newDay and newDay != '15'):
         print('begin to exporting report and check files')
 #         schedule.every().day.at("01:12").do(exportReport)
         # schedule for check Report files
 #         schedule.every().day.at("03:12").do(checkFiles)
         print('finished the export and check files.')
+        print('进到不是15的这一天了！')
         todayDate = newDay
     
     #Monthly Job
-    if(todayDate != newDay & newDay == '23'):
+    if(todayDate != newDay and newDay == '15'):
         print('begin to exporting report and check files')
         # schedule for export report
 #         schedule.every().day.at("01:12").do(exportReport)
         # schedule for check Report files
 #         schedule.every().day.at("03:12").do(checkFiles)
         print('finished the export and check files.')
+        print('进到15这一天了！')
         todayDate = newDay
    
