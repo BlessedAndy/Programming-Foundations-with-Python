@@ -43,9 +43,9 @@ while True:
     
     if(todayDate != newDay & newDay != '23'):
         print('begin to exporting report and check files')
-        schedule.every().day.at("01:12").do(exportReport)
+#         schedule.every().day.at("01:12").do(exportReport)
         # schedule for check Report files
-        schedule.every().day.at("03:12").do(checkFiles)
+#         schedule.every().day.at("03:12").do(checkFiles)
         print('finished the export and check files.')
         todayDate = newDay
     
@@ -53,9 +53,9 @@ while True:
     if(todayDate != newDay & newDay == '23'):
         print('begin to exporting report and check files')
         # schedule for export report
-        schedule.every().day.at("01:12").do(exportReport)
+#         schedule.every().day.at("01:12").do(exportReport)
         # schedule for check Report files
-        schedule.every().day.at("03:12").do(checkFiles)
+#         schedule.every().day.at("03:12").do(checkFiles)
         print('finished the export and check files.')
         todayDate = newDay
    
