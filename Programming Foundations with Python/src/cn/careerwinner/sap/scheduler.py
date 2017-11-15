@@ -9,7 +9,6 @@ import time
 import callExport
 import util
 from datetime import date
-from asyncio.tasks import sleep
 
 def exportReport():
     #Open it only when require a full load
